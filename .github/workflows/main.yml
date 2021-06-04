@@ -1,4 +1,4 @@
-name: Build Web App
+name: Build App
  
 on:
   push:
@@ -39,3 +39,9 @@ jobs:
     - name: NuGet Pack
       run: nuget pack -Prop Configuration=Release
       working-directory: RedMarina.Umbraco.BulkRelation
+
+    - name: Publish Nuget Package
+      run: dotnet nuget push *.nupkg -k ${NUGET_APIKEY} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols 
+      working-directory: RedMarina.Umbraco.BulkRelation
+      env:
+        NUGET_APIKEY: ${{ secrets.NUGET_APIKEY }}
