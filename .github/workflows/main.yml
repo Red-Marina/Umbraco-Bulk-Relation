@@ -17,11 +17,21 @@ jobs:
     - name: Setup NuGet
       uses: nuget/setup-nuget@v1
      
+    - name: Install GitVersion
+      uses: gittools/actions/gitversion/setup@v0.9.7
+      with:
+        versionSpec: '5.x'
+
     - name: Restore NuGet Packages
       run: nuget restore RedMarina.Umbraco.BulkRelation.sln
  
     - name: Build App
       run: msbuild RedMarina.Umbraco.BulkRelation.sln /p:Configuration=Release
+
+    - name: Determine Version
+      uses: gittools/actions/gitversion/execute@v0.9.7
+      with:
+        useConfigFile: true      
 
     - name: NuGet Pack
       run: nuget pack -Prop Configuration=Release
