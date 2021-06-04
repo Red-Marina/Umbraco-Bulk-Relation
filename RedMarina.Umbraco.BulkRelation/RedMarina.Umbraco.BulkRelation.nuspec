@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+    <metadata>
+        <id>$id$</id>
+        <version>$version$</version>
+        <title>$title$</title>
+        <authors>$author$</authors>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <license type="expression">MIT</license>
+        <projectUrl>https://github.com/Red-Marina/Umbraco-Bulk-Relation/</projectUrl>
+        <description>Fast bulk relations service for Umbraco 8</description>
+        <releaseNotes>Initial Relase</releaseNotes>
+        <copyright>$copyright$</copyright>
+        <dependencies>
+            <dependency
+              id="Umbraco.Core"
+              version="8.0.0" />            
+        </dependencies>
+    </metadata>
+</package>
