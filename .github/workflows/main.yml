@@ -21,5 +21,8 @@ jobs:
       run: nuget restore RedMarina.Umbraco.BulkRelation.sln
  
     - name: Build App
-      run: msbuild RedMarina.Umbraco.BulkRelation.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
- 
+      run: msbuild RedMarina.Umbraco.BulkRelation.sln /p:Configuration=Release
+
+    - name: NuGet Pack
+      run: nuget pack
+      working-directory: RedMarina.Umbraco.BulkRelation
