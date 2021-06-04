@@ -28,4 +28,4 @@ namespace RedMarina.Umbraco.BulkRelation.Interfaces
 
 If you install the NUGET package into your project and solution a User Composer will register the IBulkRelationService for injection into your own services.
 
-Alternatively you can new up the concrete BulkRelationService
+Alternatively you can new up the concrete BulkRelationService.

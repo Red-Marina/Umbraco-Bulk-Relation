@@ -20,6 +20,6 @@ jobs:
     - name: Restore NuGet Packages
       run: nuget restore RedMarina.Umbraco.BulkRelation.sln
  
-    - name: Build and Publish Web App
+    - name: Build App
       run: msbuild RedMarina.Umbraco.BulkRelation.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
  
