@@ -1,0 +1,31 @@
+name: Build Web App
+
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+ 
+jobs:
+
+  build:
+ 
+    runs-on: windows-latest
+ 
+    steps:
+    - uses: actions/checkout@v1
+      name: Checkout Code
+     
+    - name: Setup MSBuild Path
+      uses: warrenbuckley/Setup-MSBuild@v1
+       
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.0.2
+     
+    - name: Restore NuGet Packages
+      run: nuget restore RedMarina.Umbraco.BulkRelation.sln
+ 
+    - name: Build and Publish Web App
+      run: msbuild RedMarina.Umbraco.BulkRelation.sln /p:Configuration=Release /p:DeployOnBuild=true /p:PublishProfile=FolderProfile
+ 
