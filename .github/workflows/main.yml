@@ -41,7 +41,7 @@ jobs:
       working-directory: RedMarina.Umbraco.BulkRelation
 
     - name: Publish Nuget Package
-      run: dotnet nuget push *.nupkg -k ${NUGET_APIKEY} -s https://api.nuget.org/v3/index.json --skip-duplicate --no-symbols 
+      run: nuget push *.nupkg -ApiKey ${NUGET_APIKEY} -Source https://api.nuget.org/v3/index.json
       working-directory: RedMarina.Umbraco.BulkRelation
       env:
         NUGET_APIKEY: ${{ secrets.NUGET_APIKEY }}
