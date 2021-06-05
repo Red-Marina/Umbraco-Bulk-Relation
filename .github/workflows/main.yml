@@ -36,8 +36,11 @@ jobs:
       with:
         useConfigFile: true      
 
-    - name: NuGet Pack
-      run: nuget pack -Prop Configuration=Release
+    - shell: cmd
+      name: NuGet Pack
+      env:
+        GITVERSION_VERSION:  ${{ steps.gitversion.outputs.fullSemVer }}
+      run: nuget pack -Prop Configuration=Release -Version "%GITVERSION_VERSION%"
       working-directory: RedMarina.Umbraco.BulkRelation
 
     - shell: cmd
