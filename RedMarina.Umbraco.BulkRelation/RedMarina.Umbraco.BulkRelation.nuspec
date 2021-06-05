@@ -9,7 +9,7 @@
         <license type="expression">MIT</license>
         <projectUrl>https://github.com/Red-Marina/Umbraco-Bulk-Relation/</projectUrl>
         <description>Fast bulk relations service for Umbraco 8</description>
-        <releaseNotes>Initial Relase</releaseNotes>
+        <releaseNotes></releaseNotes>
         <copyright>$copyright$</copyright>
         <dependencies>
             <dependency
